@@ -3,9 +3,17 @@ import { useQuery } from '@apollo/client';
 import { QUERY_MATCHUPS } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_MATCHUPS, {
-    fetchPolicy: "no-cache"
-  });
+  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
+  //   fetchPolicy: "no-cache"
+  // });
+  const loading = false;
+  const data={
+    matchups: [{
+      _id: 1,
+      tech1: "ab"
+    }
+    ]
+  }
 
   const matchupList = data?.matchups || [];
 
