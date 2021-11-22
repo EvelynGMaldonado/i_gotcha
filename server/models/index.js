@@ -1,4 +1,8 @@
-const Tech = require('./Tech');
-const Matchup = require('./Matchup');
+const User = require('./User');
+const ServicePost = require('./ServicePost');
 
-module.exports = { Tech, Matchup };
+ServicePost.belongsTo(User, {
+    foreignKey: 'userId',
+    onDelete: 'CASCADE'
+});
+module.exports = { User, ServicePost };
