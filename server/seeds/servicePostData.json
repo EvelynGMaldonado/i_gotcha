@@ -1,0 +1,23 @@
+[
+    {
+    "name": "Piano tutoring",
+    "description": "Fun energetic and experienced tutor. I will teach you the skills and techniques and will take you from a compleate begginer all the way to advance!",
+    "location": "98109",
+    "hourly_rate": "35",
+    "phone_number": "206-933-75-75"
+},
+{
+    "name": "Photography",
+    "description": "Hello, I am a professional photographer that loves nature and always make sure to capture special moments! We have a special package that fits anyone's needs!",
+    "location": "98105",
+    "hourly_rate": "200",
+    "phone_number": "206-123-25-25"
+},
+{
+    "name": "Babysitter",
+    "description": "Responsible babysitter with 4+ years of experience caring for children during weekends, evenings, and summer and winter breaks. Skilled in creating fun, engaging, and educational activities, while priorizating children's safety and well-being",
+    "location": "98118",
+    "hourly_rate": "28",
+    "phone_number": "206-223-27-75"
+}
+]
