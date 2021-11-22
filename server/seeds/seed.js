@@ -1,13 +1,24 @@
-const db = require('../config/connection');
-const { Tech } = require('../models');
+const sequelize = require("../config/connection");
+const {User,ServicePost} = require("../models");
 
-const techData = require('./techData.json');
+const userData = require('./userData.json');
+const servicePostData = require('./servicePostData.json');
 
-db.once('open', async () => {
-  await Tech.deleteMany({});
+const seed = async ()=>{
+    await sequelize.sync({ force: true });
 
-  const technologies = await Tech.insertMany(techData);
-
-  console.log('Technologies seeded!');
-  process.exit(0);
+    const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
 });
+
+for (const post of servicePostData) {
+    await ServicePost.create({
+    ...post,
+    user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+}
+process.exit(0);
+};
+
+seed();
